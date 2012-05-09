@@ -1,0 +1,11 @@
+#product
+  h2== @product.title
+  #main-image
+    ==image_tag(@product.image.thumb.url)          
+  #cart-form     
+    .price==@product.price    
+    - if current_cart.in_cart?(@product)      
+      a href==url_for(:products, :remove_from_cart, :slug => @product.slug) "Remove From Cart"
+    - else
+      a href==url_for(:products, :add_to_cart, :slug => @product.slug) "Add To Cart"
+  #description==@product.desc   

@@ -1,0 +1,7 @@
+- @categories.each do |cat|
+  .category 
+    h3
+      a href==url_for(:products, :by_cat, :category => cat.slug)  
+        ==cat.title
+    ==image_tag(cat.image.thumb.url)    
+    a href==url_for(:products, :by_cat, :category => cat.slug) "View More"

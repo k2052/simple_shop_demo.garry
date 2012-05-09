@@ -1,0 +1,8 @@
+- product_class ='product '
+- product_class << 'last ' if @product == @products.last   
+- product_class << 'endrow ' if (@index + 1) % 2 == 0 && @product != @products.first
+li class=product_class   
+  a.preview-link href==@product.url
+    .preview== image_tag(@product.preview.thumb.url)  
+  h2.product-title
+    a href==@product.url == @product.title

@@ -1,0 +1,6 @@
+h2 Latest Products
+ul#latest
+  - @products.each_with_index do |product, index|
+    - @product = product 
+    - @index = index    
+    == partial 'products/preview'

@@ -1,0 +1,13 @@
+form.payment_form method="POST"   
+  .form_row
+    label Card Number
+    == text_field :size => 20, :autocomplete => :off, :class => :card_number
+  .form-row
+    label CVC
+    == text_field :size => 4, :autocomplete => :off, :class => :card_cvc
+  .form-row
+    label Expiration (MM/YYYY)     
+    == text_field :size => 2, :class => :card_expiry_month
+    span /
+    == text_field :size => 4, :class => :card_expiry_year
+  == submit pat(:submit_payment), :class => :submit_button

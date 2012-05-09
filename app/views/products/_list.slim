@@ -1,0 +1,11 @@
+- @products.each do |product|
+  .product
+    h2
+      a href==url_for(:products, :show, :slug => product.slug)  
+        ==product.title
+    p.image
+      ==image_tag(product.image.thumb.url)     
+    #details          
+      span.price==product.price_dollars         
+        a href==url_for(:products, :show, :slug => product.slug) "View Product"        
+    #description==product.short_desc

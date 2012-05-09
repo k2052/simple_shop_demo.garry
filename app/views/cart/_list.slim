@@ -1,0 +1,9 @@
+ul.cart_items
+- @items.each do |item|
+  .item
+    h2
+      a href==url_for(:products, :show, :slug => item.slug)  
+        ==item.title
+    #details          
+      span.price==item.price_dollars  
+      a href==url_for(:products, :remove_from_cart, :slug => item.slug) "Remove From Cart"
